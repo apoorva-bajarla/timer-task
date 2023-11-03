@@ -1,0 +1,47 @@
+h1{
+  text-align: center;
+  color: rebeccapurple;
+  font-style: italic;
+  font-size: 60px;
+  text-shadow:7px 7px 7px black;
+}
+h3{
+  text-align: center;
+  /* color:green; */
+  color: black;
+  font-size: 60px;
+  /* background-color:lightsalmon; */
+  /* border: 1px solid black; */
+  /* margin: 0px auto; */
+
+}
+/* h3:hover{
+  color: aquamarine;
+} */
+button{
+  padding: 20px;
+  margin: 30px;
+  text-align: center;
+  font-size:large;
+  background-color:brown;
+  text-shadow: 5px 5px 5px black;
+  border-radius: 20px;
+}
+div{
+  text-align: center;
+  background-color:lightseagreen;
+  width: 50%;
+  margin: 0px auto;
+  border-radius: 80px;
+  border-top-left-radius:280px ;
+  border-bottom-right-radius: 280px;
+}
+body{
+  margin-top: 150px;
+}
+button:hover{
+  background-color: cornflowerblue;
+}
+span{
+  color:red;
+}
