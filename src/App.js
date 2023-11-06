@@ -1,18 +1,22 @@
-import React,{useState} from 'react';
-import './App.css';
-
-function App() {
-  const[count,setCount]=useState(0);
+import React,{useEffect, useState} from "react"
+import axios from "axios"
+function FetchData() {
+  const[data, setData] = useState([])
+  useEffect(()=>{
+    axios.get("https://jsonplaceholder.typicode.com/users")
+    .then(res=>setData(res.data))
+    .catch(err=>console.log(err));
+  },[])
+  return(
+    <div>
+    {
+    data.map((user,index) => {
+      return<ol key={index}>
+        <li>{user.name}</li>
+      </ol>
+    }) 
+  }
+   </div> 
   
-  return (
-        <div>
-        <h1>Co<span>unt</span>er</h1>
-        <h3>{count}</h3>
-        <button onClick={()=> setCount(count + 1)}>Increment</button>
-        <button onClick={()=> setCount(count - 1)}>Decrement</button>
-        </div>
-    
-  );
-}
-
-export default App;
+  )}
+export default FetchData
