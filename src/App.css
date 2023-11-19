@@ -1,21 +1,17 @@
+/*COUNTDOWN-START*/
 
-body{
-  background-color:lightcoral;
-  /* background-color: blanchedalmond; */
+.count{
+    font-size: 80px;
+    margin-left: 99px;
+    text-shadow: 5px 5px 5px black;
 }
-
-
-.card{
-  width: 500px;
-
+button{
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 15px;
+    font-size: 30px;
+    border: 2px solid black;
+    box-shadow: 5px 5px 5px black;
+    
 }
-#img{
-  background-color: black;
-}
-h1{
-  text-align: center;
-}
- span{
-  color: lightseagreen;
-}
-
+/*COUNTDOWN-END*/
