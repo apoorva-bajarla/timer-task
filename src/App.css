@@ -1,17 +1,25 @@
-/*COUNTDOWN-START*/
+.time{
+    font-size: 100px;
+    text-align: center;
+}
+.container{
+    background-color: white;
+    box-shadow: 1px 2px 2px  lightgrey;
+    width: 400px;
+    margin: 250px auto;
+}
+body{
+    background-color: whitesmoke;
 
-.count{
-    font-size: 80px;
-    margin-left: 99px;
-    text-shadow: 5px 5px 5px black;
 }
 button{
+    margin:10px auto;
     padding: 10px;
-    margin-left: 20px;
-    border-radius: 15px;
-    font-size: 30px;
-    border: 2px solid black;
-    box-shadow: 5px 5px 5px black;
-    
+    width: 100px;
 }
-/*COUNTDOWN-END*/
+.start-btn{
+    background-color:lightgreen;
+}
+.stop-btn{
+    background-color:lightcoral; 
+}

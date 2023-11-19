@@ -1,43 +1,38 @@
 import React, { useState, useEffect } from "react";
- import "./App.css";
+import "./App.css";
 
- const Countdown = () => {
- const [count, setCount] = useState(0);
-   const [startCounter, setStartCounter] = useState(false);
-   const [isRunning, setIsRunning] = useState(false); 
+const Timer = () => {
+  const [time, setTime] = useState(0);
+  const [startTimer, setStartTimer] = useState(false);
+  const [isDisable, setIsDisable] = useState(false); 
 
-   useEffect(() => {
-     let intervalId = null;
-     if (startCounter) {
-       setIsRunning(true); 
+  useEffect(() => {
+    let intervalId = null;
+    if (startTimer) {
+      setIsDisable(true); 
       intervalId = setInterval(() => {
-        setCount((prev) => prev + 1);
-       }, 1000);
-     } else {
-      setIsRunning(false); 
-     clearInterval(intervalId);
+        setTime((prev) => prev + 1);
+      }, 1000);
+    } else {
+      setIsDisable(false); 
+      clearInterval(intervalId);
     }
-     return () => clearInterval(intervalId);
-  }, [startCounter]);
-
+    return () => clearInterval(intervalId);
+  }, [startTimer]);
   return (
-        <>  
-      <div className="count">{count}</div>
-      <button 
-         onClick={() => setStartCounter(true)}
-          disabled={isRunning}>
-         Start
-       </button>
-       <button
-         onClick={() => setStartCounter(false)}     
-             disabled={!isRunning}  >
-          Stop
-      </button>
-      </>
-     );
- };
- export default Countdown;
-
+    <div className="container">
+      <div className="time">{time}</div>
+     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+     <button className="start-btn" onClick={() => setStartTimer(true)}
+        disabled={isDisable}> Start </button>
+      &nbsp;&nbsp; 
+      <button className="stop-btn"
+        onClick={() => setStartTimer(false)}
+        disabled={!isDisable}>Stop </button>
+    </div>
+  );
+};
+export default Timer;
 
 
 
