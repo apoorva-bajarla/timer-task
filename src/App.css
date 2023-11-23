@@ -1,25 +1,44 @@
-.time{
-    font-size: 100px;
-    text-align: center;
-}
-.container{
-    background-color: white;
-    box-shadow: 1px 2px 2px  lightgrey;
-    width: 400px;
-    margin: 250px auto;
-}
-body{
-    background-color: whitesmoke;
+ button{
+    padding: 20px;
+    margin-left:15px ;
+    border-radius: 15px;
+    border: 2px solid black;
+    box-shadow: 6px 6px 6px black;
+    background-color: brown;
+ }
+ p{
+    margin-left: 25px;
+    font-size: 50px;
+ }
+ span{
+   color: brown; 
+   text-shadow: 8px 8px 8px black;
+   font-size: 50px;
+ }
+ .box{
+    
+    text-align: center; 
+      
+ }
+ h1{
+    text-shadow: 8px 8px 8px black;
+    font-size: 50px;
+ }
 
-}
-button{
-    margin:10px auto;
-    padding: 10px;
-    width: 100px;
-}
-.start-btn{
-    background-color:lightgreen;
-}
-.stop-btn{
-    background-color:lightcoral; 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 

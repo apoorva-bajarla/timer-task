@@ -1,54 +1,41 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
 
-const Timer = () => {
-  const [time, setTime] = useState(0);
-  const [startTimer, setStartTimer] = useState(false);
-  const [isDisable, setIsDisable] = useState(false); 
-
-  useEffect(() => {
-    let intervalId = null;
-    if (startTimer) {
-      setIsDisable(true); 
-      intervalId = setInterval(() => {
-        setTime((prev) => prev + 1);
-      }, 1000);
-    } else {
-      setIsDisable(false); 
-      clearInterval(intervalId);
+import React from "react";
+import"./App.css"
+ import { useState,useEffect,useRef } from "react";
+ const App =()=>{
+    const [count,setCount]=useState(0)
+    const [state,setState]=useState(false)
+    const buttonElement = useRef(null);
+ useEffect(()=>{
+    let counter=""
+    if(state){
+        counter =setInterval(()=>{ 
+            setCount((prevCount)=>prevCount+1)},500)
+            
     }
-    return () => clearInterval(intervalId);
-  }, [startTimer]);
-  return (
-    <div className="container">
-      <div className="time">{time}</div>
-     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-     <button className="start-btn" onClick={() => setStartTimer(true)}
-        disabled={isDisable}> Start </button>
-      &nbsp;&nbsp; 
-      <button className="stop-btn"
-        onClick={() => setStartTimer(false)}
-        disabled={!isDisable}>Stop </button>
-    </div>
-  );
-};
-export default Timer;
+     return()=>clearInterval(counter)
+  },[state])
+  
+  const startButton=()=>{
+   
+    buttonElement.current.disabled=true
 
 
+    setState(true)
+  }
+  const stopButton=()=>{
+    buttonElement.current.disabled=false
+    setState(false)
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return(
+        <div className="box">
+        <h1>Increm<span>entcount</span></h1>
+        <p>{count}</p>
+        <button id="btn" ref={buttonElement} onClick={()=>{startButton()}}>Start</button>
+        <button  onClick={()=>{stopButton()}}>Stop</button>
+        </div>
+    )
+   
+ } 
+ export default App;
