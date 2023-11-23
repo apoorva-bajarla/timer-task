@@ -10,7 +10,7 @@ import"./App.css"
     let counter=""
     if(state){
         counter =setInterval(()=>{ 
-            setCount((prevCount)=>prevCount+1)},500)
+            setCount((prevCount)=>prevCount+1)},1000)
             
     }
      return()=>clearInterval(counter)
